@@ -10,11 +10,14 @@ import SocialMedia from "./SocialMedia";
 import Sidebar from "./Sidebar";
 
 import { useEffect, useState } from "react";
+import MobileNavbar from "./MobileNavbar";
 
 const Header = () => {
   const [screenHeight, setScreenHeight] = useState(0);
   const [isStickyNavActive, setIsStickyNavActive] = useState(false);
   const [isSidebarActive, setIsSidebarActive] = useState(false);
+
+  const handleClick = () => setIsSidebarActive(false);
 
   useEffect(() => {
     if (isSidebarActive) {
@@ -26,7 +29,7 @@ const Header = () => {
 
   useEffect(() => {
     const onScroll = () => {
-      setScreenHeight((prevHeight) => {
+      setScreenHeight(prevHeight => {
         setIsStickyNavActive(prevHeight > window.scrollY ? false : true);
         return window.scrollY;
       });
@@ -57,10 +60,15 @@ const Header = () => {
                   </Link>
                   BOOK NOW
                 </p>
+                <CiMenuBurger
+                  className="sidebarMenu"
+                  onClick={() => setIsSidebarActive(!isSidebarActive)}
+                />
               </div>
             </div>
           </div>
         </div>
+        <MobileNavbar />
         <LowerSectionCore>
           <div className="rightSection">
             <form>
@@ -81,8 +89,7 @@ const Header = () => {
         <div
           className={`stickyNav ${
             screenHeight < 350 || !isStickyNavActive ? "" : "active"
-          } ${isSidebarActive ? "activeSidebar" : ""}`}
-        >
+          } ${isSidebarActive ? "activeSidebar" : ""}`}>
           <LowerSectionCore>
             <CiMenuBurger
               onClick={() => setIsSidebarActive(!isSidebarActive)}
@@ -90,7 +97,7 @@ const Header = () => {
           </LowerSectionCore>
         </div>
       </header>
-      <Sidebar isActive={isSidebarActive} />
+      <Sidebar isActive={isSidebarActive} handleClick={handleClick} />
     </>
   );
 };

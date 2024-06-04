@@ -17,11 +17,15 @@
     right: 0;
   }
   .closeIcon {
-    cursor: pointer;
     svg {
+      cursor: pointer;
       font-size: 22px;
       color: $yellowClr;
       float: right;
+      transition: all 0.3s ease;
+      &:hover {
+        rotate: 180deg;
+      }
     }
   }
   a {
@@ -35,12 +39,24 @@
       flex-direction: column;
       gap: 10px;
       .navItem {
+        position: relative;
         a {
           color: $grayClr;
           transition: all 0.3s ease;
           &:hover {
             color: #fff;
           }
+        }
+        &::before {
+          content: "";
+          position: absolute;
+          left: -15px;
+          top: 7px;
+          width: 5px;
+          height: 5px;
+          border-right: 3px solid $grayClr;
+          border-top: 3px solid $grayClr;
+          rotate: 45deg;
         }
       }
     }

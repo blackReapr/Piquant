@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 import Logo from "../../assets/images/logo.png";
 import SocialMedia from "./SocialMedia";
 
-const Sidebar = ({ isActive }) => {
+const Sidebar = ({ isActive, handleClick }) => {
   return (
     <div className={`sidebar ${isActive ? "active" : ""}`}>
       <div className="closeIcon">
-        <IoMdClose />
+        <IoMdClose onClick={handleClick} />
       </div>
       <Link to="/">
         <img src={Logo} alt="logo" />
