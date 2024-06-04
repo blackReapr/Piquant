@@ -11,6 +11,18 @@
 
 body {
   height: 400vh;
+  overflow-x: hidden;
+  transition: all 0.3s ease;
+  position: relative;
+  left: 0;
+}
+.mainBody {
+  left: -300px;
+}
+
+::selection {
+  background: $yellowClr;
+  color: $blackClr;
 }
 
 .container {

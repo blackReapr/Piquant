@@ -6,15 +6,17 @@ import "./assets/scss/index.scss";
 import { Home } from "./pages";
 
 // Components
-import { Header } from "./components";
+import Header from "./components/Header/Header";
 
 function App() {
   return (
     <>
       <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes>
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </main>
     </>
   );
 }

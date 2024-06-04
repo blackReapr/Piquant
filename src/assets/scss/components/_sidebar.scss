@@ -1,0 +1,15 @@
+.sidebar {
+  width: 370px;
+  position: fixed;
+  top: 0;
+  right: -370px;
+  bottom: 0;
+  background-image: url(../images/sidebar-background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  transition: all 0.3s ease;
+  &.active {
+    right: 0;
+  }
+}
