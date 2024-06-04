@@ -9,18 +9,28 @@ const Sidebar = ({ isActive }) => {
       <div className="closeIcon">
         <IoMdClose />
       </div>
-      <Link>
+      <Link to="/">
         <img src={Logo} alt="logo" />
       </Link>
       <nav className="navbar">
         <ul className="navList">
           <li className="navItem">
-            <Link>Original Home</Link>
-            <Link>About Us</Link>
-            <Link>Meet The Chefs</Link>
-            <Link>Our Services</Link>
-            <Link>Shop</Link>
-            <Link>Landing</Link>
+            <Link to="/">Original Home</Link>
+          </li>
+          <li className="navItem">
+            <Link to="/">About Us</Link>
+          </li>
+          <li className="navItem">
+            <Link to="/">Meet The Chefs</Link>
+          </li>
+          <li className="navItem">
+            <Link to="/">Our Services</Link>
+          </li>
+          <li className="navItem">
+            <Link to="/">Shop</Link>
+          </li>
+          <li className="navItem">
+            <Link to="/">Landing</Link>
           </li>
         </ul>
       </nav>
@@ -28,6 +38,7 @@ const Sidebar = ({ isActive }) => {
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore.
       </p>
+      <hr />
       <SocialMedia />
     </div>
   );

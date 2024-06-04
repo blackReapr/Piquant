@@ -9,7 +9,47 @@
   background-repeat: no-repeat;
   background-position: center center;
   transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  padding: 70px 40px;
+  gap: 25px;
   &.active {
     right: 0;
+  }
+  .closeIcon {
+    cursor: pointer;
+    svg {
+      font-size: 22px;
+      color: $yellowClr;
+      float: right;
+    }
+  }
+  a {
+    img {
+      width: 107px;
+    }
+  }
+  .navbar {
+    .navList {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      .navItem {
+        a {
+          color: $grayClr;
+          transition: all 0.3s ease;
+          &:hover {
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+  .info {
+    color: $grayClr;
+  }
+  hr {
+    border-top: 1px solid $grayClr;
+    border-bottom: none;
   }
 }
