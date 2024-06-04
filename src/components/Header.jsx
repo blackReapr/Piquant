@@ -19,11 +19,14 @@ import { useEffect, useState } from "react";
 
 const Header = () => {
   const [screenHeight, setScreenHeight] = useState(0);
+  const [isStickyNavActive, setIsStickyNavActive] = useState(false);
 
-  console.log(screenHeight);
   useEffect(() => {
     const onScroll = () => {
-      setScreenHeight(window.scrollY);
+      setScreenHeight(prevHeight => {
+        setIsStickyNavActive(prevHeight > window.scrollY ? false : true);
+        return window.scrollY;
+      });
     };
 
     window.addEventListener("scroll", onScroll);
@@ -33,12 +36,18 @@ const Header = () => {
     };
   }, []);
 
+  // useEffect(() => {
+  //   console.log("New: " + window.scrollY);
+  //   console.log("Current: " + screenHeight);
+  //   setIsStickyNavActive(screenHeight > window.scrollY ? false : true);
+  // }, [screenHeight]);
+
   return (
     <>
       <header className="header">
-        <div className="container">
-          <div className="row">
-            <div className="upperSection">
+        <div className="upperSection">
+          <div className="container">
+            <div className="row">
               <div className="socialMedia">
                 <p>FOLLOW US</p>
                 <ul className="socialLinks">
@@ -76,33 +85,32 @@ const Header = () => {
                 </p>
               </div>
             </div>
-            <LowerSectionCore>
-              <div className="rightSection">
-                <form>
-                  <input type="text" placeholder="Search..." />
-                  <button type="submit">
-                    <FaSearch />
-                  </button>
-                </form>
-                <div className="cart">
-                  <p>
-                    Cart
-                    <FaShoppingCart />
-                    <span className="cartCount">0</span>
-                  </p>
-                </div>
-              </div>
-            </LowerSectionCore>
-            {screenHeight > 200 ? (
-              <div className="stickyNav">
-                <LowerSectionCore>
-                  <CiMenuBurger />
-                </LowerSectionCore>
-              </div>
-            ) : (
-              ""
-            )}
           </div>
+        </div>
+        <LowerSectionCore>
+          <div className="rightSection">
+            <form>
+              <input type="text" placeholder="Search..." />
+              <button type="submit">
+                <FaSearch />
+              </button>
+            </form>
+            <div className="cart">
+              <p>
+                Cart
+                <FaShoppingCart />
+                <span className="cartCount">0</span>
+              </p>
+            </div>
+          </div>
+        </LowerSectionCore>
+        <div
+          className={`stickyNav ${
+            screenHeight < 350 || !isStickyNavActive ? "" : "active"
+          }`}>
+          <LowerSectionCore>
+            <CiMenuBurger />
+          </LowerSectionCore>
         </div>
       </header>
     </>
