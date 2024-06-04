@@ -2,11 +2,19 @@
   background-image: url(../images/home-1-opening-hours-background.jpg);
   background-position: center center;
   background-size: contain;
+  position: relative;
+
   .container {
     .row {
       flex-direction: column;
       padding: 20px 0;
       gap: 15px;
+      .stickyNav {
+        position: fixed;
+        background-image: url(../images/home-1-opening-hours-background.jpg);
+        height: fit-content;
+        left: 0;
+      }
       .upperSection {
         display: flex;
         justify-content: space-between;
@@ -51,24 +59,46 @@
             }
           }
         }
+        &::after {
+          content: "";
+          position: absolute;
+          background-image: url(../images/header-top-border.png);
+          bottom: -5px;
+          left: 0;
+          width: 100%;
+          height: 2px;
+        }
       }
       .lowerSection {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        gap: 40px;
         .logo {
           img {
             width: 120px;
           }
         }
         .navbar {
+          flex-grow: 1;
+          max-width: 671px;
           .navList {
             display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
             gap: 10px;
+            svg {
+              margin-top: 2px;
+              color: #fff;
+              font-size: 9px;
+              color: #9b9b9b;
+            }
             .navItem {
               a {
                 color: #fff;
                 position: relative;
+                font-size: 15px;
               }
             }
           }
@@ -104,6 +134,21 @@
               display: flex;
               align-items: center;
               gap: 5px;
+              position: relative;
+              .cartCount {
+                position: absolute;
+                top: -7px;
+                right: -13px;
+                font-size: 10px;
+                width: 17px;
+                height: 17px;
+                font-family: "Oswald", serif;
+                background-color: $yellowClr;
+                border-radius: 50%;
+                color: $blackClr;
+                line-height: 17px;
+                text-align: center;
+              }
             }
           }
         }
