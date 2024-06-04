@@ -34,27 +34,6 @@
         display: flex;
         justify-content: space-between;
         position: relative;
-        .socialMedia {
-          display: flex;
-          gap: 15px;
-          align-items: center;
-          p {
-            font-size: 11px;
-            letter-spacing: 1px;
-            color: #fff;
-            text-transform: uppercase;
-          }
-          .socialLinks {
-            display: flex;
-            gap: 13px;
-            li {
-              svg {
-                font-size: 14px;
-                color: #fff;
-              }
-            }
-          }
-        }
         .reservations {
           display: flex;
           gap: 20px;

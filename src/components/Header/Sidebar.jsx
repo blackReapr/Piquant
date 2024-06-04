@@ -16,10 +16,21 @@ const Sidebar = ({ isActive }) => {
         <ul className="navList">
           <li className="navItem">
             <Link>Original Home</Link>
+          </li>
+
+          <li className="navItem">
             <Link>About Us</Link>
+          </li>
+          <li className="navItem">
             <Link>Meet The Chefs</Link>
+          </li>
+          <li className="navItem">
             <Link>Our Services</Link>
+          </li>
+          <li className="navItem">
             <Link>Shop</Link>
+          </li>
+          <li className="navItem">
             <Link>Landing</Link>
           </li>
         </ul>
@@ -28,6 +39,7 @@ const Sidebar = ({ isActive }) => {
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore.
       </p>
+      <hr />
       <SocialMedia />
     </div>
   );

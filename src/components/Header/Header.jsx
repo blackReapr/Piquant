@@ -82,6 +82,7 @@ const Header = () => {
           className={`stickyNav ${
             screenHeight < 350 || !isStickyNavActive ? "" : "active"
           } ${isSidebarActive ? "activeSidebar" : ""}`}
+          style={{ backgroundColor: "#000", backgroundImage: "none" }}
         >
           <LowerSectionCore>
             <CiMenuBurger

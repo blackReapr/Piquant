@@ -9,7 +9,61 @@
   background-repeat: no-repeat;
   background-position: center center;
   transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  padding: 70px 40px;
+  gap: 25px;
   &.active {
     right: 0;
+  }
+  .closeIcon {
+    cursor: pointer;
+    svg {
+      color: $yellowClr;
+      float: right;
+      font-size: 22px;
+    }
+  }
+  a {
+    img {
+      width: 107px;
+    }
+  }
+  .navbar {
+    .navList {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      .navItem {
+        position: relative;
+        a {
+          color: $grayClr;
+          transition: all 0.3s ease;
+          &:hover {
+            color: #fff;
+          }
+        }
+        &::before {
+          content: "";
+          position: absolute;
+          left: -10px;
+          width: 5px;
+          height: 5px;
+          top: 9px;
+          background-color: $grayClr;
+          border-top-right-radius: 80%;
+          border-bottom-right-radius: 80%;
+        }
+      }
+    }
+  }
+  .info {
+    color: $grayClr;
+    line-height: 31px;
+  }
+  hr {
+    border-top: 1px solid $grayClr;
+    border-bottom: none;
+    outline: none;
   }
 }
