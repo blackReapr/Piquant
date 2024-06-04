@@ -1,0 +1,113 @@
+.header {
+  background-image: url(../images/home-1-opening-hours-background.jpg);
+  background-position: center center;
+  background-size: contain;
+  .container {
+    .row {
+      flex-direction: column;
+      padding: 20px 0;
+      gap: 15px;
+      .upperSection {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        .socialMedia {
+          display: flex;
+          gap: 15px;
+          align-items: center;
+          p {
+            font-size: 11px;
+            letter-spacing: 1px;
+            color: #fff;
+            text-transform: uppercase;
+          }
+          .socialLinks {
+            display: flex;
+            gap: 10px;
+            li {
+              svg {
+                font-size: 14px;
+                color: #fff;
+              }
+            }
+          }
+        }
+        .reservations {
+          display: flex;
+          gap: 20px;
+          font-size: 11px;
+          color: #fff;
+          font-weight: 300;
+          letter-spacing: 1px;
+          p {
+            text-transform: uppercase;
+            a {
+              color: #fff;
+            }
+            &:nth-of-type(2) {
+              a {
+                margin-right: 5px;
+              }
+            }
+          }
+        }
+      }
+      .lowerSection {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .logo {
+          img {
+            width: 120px;
+          }
+        }
+        .navbar {
+          .navList {
+            display: flex;
+            gap: 10px;
+            .navItem {
+              a {
+                color: #fff;
+                position: relative;
+              }
+            }
+          }
+        }
+        .rightSection {
+          display: flex;
+          gap: 10px;
+          align-items: center;
+          form {
+            input {
+              width: 133px;
+              padding: 0 11px;
+              border: 1px solid #efefef;
+              line-height: 34px;
+              border: none;
+              outline: none;
+              color: $blackClr;
+              font-size: 11px;
+            }
+            button {
+              font-size: 11px;
+              outline: none;
+              border: none;
+              padding: 0 11px;
+              line-height: 34px;
+              cursor: pointer;
+              background-color: $yellowClr;
+            }
+          }
+          .cart {
+            color: #fff;
+            p {
+              display: flex;
+              align-items: center;
+              gap: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
