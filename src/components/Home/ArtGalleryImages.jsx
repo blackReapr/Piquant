@@ -15,6 +15,7 @@ const ArtGalleryImages = ({ images }) => {
         setItemCount(3);
       }
     };
+    onChange();
     window.addEventListener("resize", onChange);
 
     return () => window.removeEventListener("ressize", onChange);
