@@ -17,11 +17,15 @@
     right: 0;
   }
   .closeIcon {
-    cursor: pointer;
     svg {
+      cursor: pointer;
+      font-size: 22px;
       color: $yellowClr;
       float: right;
-      font-size: 22px;
+      transition: all 0.3s ease;
+      &:hover {
+        rotate: 180deg;
+      }
     }
   }
   a {
@@ -33,7 +37,7 @@
     .navList {
       display: flex;
       flex-direction: column;
-      gap: 15px;
+      gap: 10px;
       .navItem {
         position: relative;
         a {
@@ -46,24 +50,22 @@
         &::before {
           content: "";
           position: absolute;
-          left: -10px;
+          left: -15px;
+          top: 7px;
           width: 5px;
           height: 5px;
-          top: 9px;
-          background-color: $grayClr;
-          border-top-right-radius: 80%;
-          border-bottom-right-radius: 80%;
+          border-right: 3px solid $grayClr;
+          border-top: 3px solid $grayClr;
+          rotate: 45deg;
         }
       }
     }
   }
   .info {
     color: $grayClr;
-    line-height: 31px;
   }
   hr {
     border-top: 1px solid $grayClr;
     border-bottom: none;
-    outline: none;
   }
 }

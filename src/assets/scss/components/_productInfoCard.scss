@@ -1,0 +1,30 @@
+.card {
+  flex: 0 0 30%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 15px;
+  gap: 15px;
+  .imageContainer {
+    width: 100%;
+    img {
+      width: 100%;
+    }
+  }
+  .title {
+    text-transform: uppercase;
+    font-family: "Oswald", serif;
+    font-size: 18px;
+    color: $blackClr;
+  }
+  .info {
+    font-size: 15px;
+    color: $grayClr;
+    line-height: 27px;
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    padding: 0;
+  }
+}

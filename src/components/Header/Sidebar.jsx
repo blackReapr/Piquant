@@ -3,35 +3,34 @@ import { Link } from "react-router-dom";
 import Logo from "../../assets/images/logo.png";
 import SocialMedia from "./SocialMedia";
 
-const Sidebar = ({ isActive }) => {
+const Sidebar = ({ isActive, handleClick }) => {
   return (
     <div className={`sidebar ${isActive ? "active" : ""}`}>
       <div className="closeIcon">
-        <IoMdClose />
+        <IoMdClose onClick={handleClick} />
       </div>
-      <Link>
+      <Link to="/">
         <img src={Logo} alt="logo" />
       </Link>
       <nav className="navbar">
         <ul className="navList">
           <li className="navItem">
-            <Link>Original Home</Link>
-          </li>
-
-          <li className="navItem">
-            <Link>About Us</Link>
+            <Link to="/">Original Home</Link>
           </li>
           <li className="navItem">
-            <Link>Meet The Chefs</Link>
+            <Link to="/">About Us</Link>
           </li>
           <li className="navItem">
-            <Link>Our Services</Link>
+            <Link to="/">Meet The Chefs</Link>
           </li>
           <li className="navItem">
-            <Link>Shop</Link>
+            <Link to="/">Our Services</Link>
           </li>
           <li className="navItem">
-            <Link>Landing</Link>
+            <Link to="/">Shop</Link>
+          </li>
+          <li className="navItem">
+            <Link to="/">Landing</Link>
           </li>
         </ul>
       </nav>
