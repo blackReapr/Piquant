@@ -53,20 +53,23 @@ const RecommendedCarousel = () => {
   return (
     <Swiper
       modules={[Navigation, Scrollbar, A11y]}
-      slidesPerView={3}
+      slidesPerView={1}
       spaceBetween={50}
       breakpoints={{
         768: {
-          slidesPerView: 2,
+          slidesPerView: 3,
         },
-      }}>
-      {data.map(item => (
+      }}
+    >
+      {data.map((item) => (
         <SwiperSlide key={item.id}>
           <Link to="/">
             <div className="card">
               {item?.isNew ? <span className="new">NEW</span> : ""}
               <span className="price">${item.price}</span>
-              <img src={CardFood} alt="card food" />
+              <div className="imgContainer">
+                <img src={CardFood} alt="card food" />
+              </div>
               <h4 className="title">{item.title}</h4>
               <p className="info">{item.info}</p>
             </div>
