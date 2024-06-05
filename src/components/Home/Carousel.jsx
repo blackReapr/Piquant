@@ -1,10 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
-
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
+import { Navigation, Scrollbar, A11y } from "swiper/modules";
 
 import FoodAndDrink from "../../assets/images/home-1-logo-1-180x90.png";
 import Beef from "../../assets/images/home-1-slide-1-graphic-1.png";
@@ -22,7 +17,7 @@ import { Link } from "react-router-dom";
 const Carousel = () => {
   return (
     <Swiper
-      modules={[Navigation, Pagination, Scrollbar, A11y]}
+      modules={[Navigation, Scrollbar, A11y]}
       spaceBetween={50}
       slidesPerView={1}
       navigation>

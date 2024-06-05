@@ -3,6 +3,7 @@ import ArtGallery from "../components/Home/ArtGallery";
 import Carousel from "../components/Home/Carousel";
 import ProductsInfo from "../components/Home/ProductsInfo";
 import Welcome from "../assets/images/welcome.jpg";
+import RecommendedCarousel from "../components/Home/RecommendedCarousel";
 
 const Home = () => {
   return (
@@ -40,6 +41,20 @@ const Home = () => {
             <div className="rightSide">
               <img src={Welcome} alt="" />
             </div>
+          </div>
+        </div>
+      </section>
+      <section className="recommended">
+        <div className="container">
+          <div className="row">
+            <h3 className="title">Recommended By our chef</h3>
+            <p className="info">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip.
+            </p>
+            <RecommendedCarousel />
           </div>
         </div>
       </section>

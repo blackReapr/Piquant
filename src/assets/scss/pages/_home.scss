@@ -303,3 +303,116 @@
 }
 
 // END WELCOME SECTION
+
+// START RECOMMENDED SECTION
+
+.recommended {
+  padding: 60px 0;
+  background-image: url(../images/recommended.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  .container {
+    .row {
+      flex-direction: column;
+      gap: 20px;
+      .title {
+        text-transform: uppercase;
+        font-size: 30px;
+        font-family: "Oswald", serif;
+        color: #fff;
+        text-align: center;
+      }
+      .info {
+        color: #fff;
+        font-size: 15px;
+        text-align: center;
+      }
+      .swiper {
+        height: 400px;
+        width: 100%;
+      }
+      a {
+        .card {
+          position: relative;
+          background-color: #fff;
+          padding-inline: 0;
+          padding-bottom: 15px;
+          display: flex;
+          flex-direction: column;
+          .price {
+            position: absolute;
+            top: 52%;
+            left: 50%;
+            background-color: $yellowClr;
+            transform: translate(-50%, -50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            font-weight: 700;
+            z-index: 5;
+            width: 54px;
+            height: 54px;
+            color: $blackClr;
+          }
+          .title {
+            color: $blackClr;
+            margin-top: 20px;
+            font-size: 18px;
+          }
+          .info {
+            font-size: 15px;
+            color: $grayClr;
+          }
+          .new {
+            position: absolute;
+            z-index: 5;
+            padding: 1px 7px;
+            font-size: 11px;
+            top: 10px;
+            left: 10px;
+            text-transform: uppercase;
+            background-color: $yellowClr;
+            color: $blackClr;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .recommended {
+    .container {
+      .row {
+        a {
+          .card {
+            .price {
+              top: 45%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .recommended {
+    .container {
+      .row {
+        a {
+          .card {
+            .price {
+              top: 39%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// END RECOMMENDED SECTION
