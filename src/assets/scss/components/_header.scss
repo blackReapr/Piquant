@@ -7,6 +7,7 @@
   flex-direction: column;
   padding: 20px 0;
   gap: 25px;
+  z-index: 999;
   .stickyNav {
     position: fixed;
     padding: 5px 0;
@@ -77,6 +78,20 @@
     padding-bottom: 0px;
     .stickyNav {
       display: none;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .header {
+    .upperSection {
+      .container {
+        .row {
+          flex-direction: column;
+          align-items: center;
+          gap: 20px;
+        }
+      }
     }
   }
 }
