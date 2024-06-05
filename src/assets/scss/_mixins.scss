@@ -1,4 +1,4 @@
-@mixin primaryBtn() {
+@mixin primaryBtn($bgClr, $hvClr) {
   display: inline-block;
   background-color: $yellowClr;
   color: $blackClr;
@@ -10,6 +10,7 @@
   font-family: "Oswald", serif;
   transition: all 0.3s ease;
   &:hover {
-    background-color: #fff;
+    background-color: $bgClr;
+    color: $hvClr;
   }
 }

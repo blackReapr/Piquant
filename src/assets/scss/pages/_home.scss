@@ -36,7 +36,7 @@
               color: #fff;
             }
             a {
-              @include primaryBtn();
+              @include primaryBtn(#fff, $blackClr);
             }
           }
           .rightSide {
@@ -245,3 +245,61 @@
 }
 
 // END ART GALLERY
+
+//  START WELCOME SECTION
+
+.welcome {
+  padding: 60px 0;
+  .container {
+    .row {
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      .leftSide {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        flex: 0 0 50%;
+        .title {
+          font-size: 30px;
+          font-family: "Oswald", serif;
+          color: $blackClr;
+        }
+        .info {
+          font-size: 15px;
+          color: $grayClr;
+        }
+        a {
+          @include primaryBtn($blackClr, #fff);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .welcome {
+    .container {
+      .row {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .welcome {
+    .container {
+      .row {
+        .rightSide {
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+// END WELCOME SECTION
