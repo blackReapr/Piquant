@@ -624,8 +624,32 @@
 .reviews {
   padding: 60px 0;
   background-image: url(../images/hero-bg.jpg);
+  background-attachment: fixed;
+  background-position: center top;
   .container {
     .row {
+      .swiper {
+        width: 100%;
+        .review {
+          text-align: center;
+          display: flex;
+          flex-direction: column;
+          .reviewContent {
+            font-size: 15px;
+            padding: 10px 30px 22px 30px;
+          }
+          .reviewStars {
+            svg {
+              color: $yellowClr;
+              margin-right: 5px;
+            }
+          }
+          .reviewAuthor {
+            font-weight: 700;
+            margin-top: 10px;
+          }
+        }
+      }
       flex-direction: column;
       gap: 20px;
       align-items: center;
@@ -663,3 +687,104 @@
 }
 
 // END REVIEWS SECTION
+
+// START NEWS SECTION
+
+.news {
+  padding: 60px 0;
+  .container {
+    .row {
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+      .title {
+        font-size: 30px;
+        font-family: "Oswald", serif;
+        color: $blackClr;
+      }
+      .info {
+        text-align: center;
+        font-size: 15px;
+        color: $grayClr;
+      }
+      .newsBox {
+        display: flex;
+        justify-content: space-between;
+        .newsCard {
+          &:hover {
+            .newsImage {
+              &::after {
+                visibility: visible;
+                opacity: 1;
+              }
+            }
+          }
+          flex: 0 0 31%;
+          display: flex;
+          flex-direction: column;
+          .newsImage {
+            width: 100%;
+            position: relative;
+            img {
+              width: 100%;
+              height: 100%;
+            }
+            &::after {
+              content: "";
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              visibility: hidden;
+              opacity: 0;
+              background-color: #00000050;
+              transition: all 0.3s ease;
+            }
+          }
+          .newsContent {
+            padding: 6px 22px 19px;
+            padding-top: 20px;
+            border: 2px solid #636363;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            .date {
+              font-size: 13px;
+              color: $grayClr;
+            }
+            .cardTitle {
+              font-family: "Oswald", serif;
+              font-size: 20px;
+              color: $blackClr;
+            }
+            .cardInfo {
+              font-size: 15px;
+              line-height: 27px;
+              color: $grayClr;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .news {
+    .container {
+      .row {
+        .newsBox {
+          flex-direction: column;
+          gap: 15px;
+          .newsCard {
+            .newsImage {
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// END NEWS SECTION

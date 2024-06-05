@@ -10,6 +10,10 @@ import RecommendedCarousel from "../components/Home/RecommendedCarousel";
 import Welcome from "../assets/images/welcome.jpg";
 import ModificationImageOne from "../assets/images/modification-image-1.jpg";
 import CommaIcon from "../assets/images/testimonials-icon.png";
+import ReviewsCarousel from "../components/Home/ReviewsCarousel";
+import NewsImage from "../assets/images/news.jpg";
+
+import { FaCalendarAlt } from "react-icons/fa";
 
 const Home = () => {
   return (
@@ -132,6 +136,69 @@ const Home = () => {
             <img src={CommaIcon} alt="comma icon" />
             <h4 className="title">Happy Customers</h4>
             <h6 className="subTitle">Delicious Food</h6>
+            <ReviewsCarousel />
+          </div>
+        </div>
+      </section>
+      <section className="news">
+        <div className="container">
+          <div className="row">
+            <h4 className="title">LATEST NEWS</h4>
+            <p className="info">
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate.
+            </p>
+            <div className="newsBox">
+              <Link to="/" className="newsCard">
+                <div className="newsImage">
+                  <img src={NewsImage} alt="Ice cream" />
+                </div>
+                <div className="newsContent">
+                  <p className="date">
+                    <FaCalendarAlt /> NOV 04, 2015
+                  </p>
+                  <h3 className="cardTitle">NOUGAT ICE CREAM</h3>
+                  <p className="cardInfo">
+                    Interdum et malesuada fames ac ante ipsum primis in
+                    faucibus. Quisque at tellus felis. Sed fringilla, tellus non
+                    congue porttitor, dui eros fauci..
+                  </p>
+                </div>
+              </Link>
+              <Link to="/" className="newsCard">
+                <div className="newsImage">
+                  <img src={NewsImage} alt="Ice cream" />
+                </div>
+                <div className="newsContent">
+                  <p className="date">
+                    <FaCalendarAlt /> NOV 04, 2015
+                  </p>
+                  <h3 className="cardTitle">NOUGAT ICE CREAM</h3>
+                  <p className="cardInfo">
+                    Interdum et malesuada fames ac ante ipsum primis in
+                    faucibus. Quisque at tellus felis. Sed fringilla, tellus non
+                    congue porttitor, dui eros fauci..
+                  </p>
+                </div>
+              </Link>
+              <Link to="/" className="newsCard">
+                <div className="newsImage">
+                  <img src={NewsImage} alt="Ice cream" />
+                </div>
+                <div className="newsContent">
+                  <p className="date">
+                    <FaCalendarAlt /> NOV 04, 2015
+                  </p>
+                  <h3 className="cardTitle">NOUGAT ICE CREAM</h3>
+                  <p className="cardInfo">
+                    Interdum et malesuada fames ac ante ipsum primis in
+                    faucibus. Quisque at tellus felis. Sed fringilla, tellus non
+                    congue porttitor, dui eros fauci..
+                  </p>
+                </div>
+              </Link>
+            </div>
           </div>
         </div>
       </section>

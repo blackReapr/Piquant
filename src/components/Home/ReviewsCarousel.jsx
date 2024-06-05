@@ -1,7 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import { Navigation, Scrollbar, A11y } from "swiper/modules";
-
 import { FaStar, FaRegStar } from "react-icons/fa";
 
 import "swiper/css";
@@ -42,17 +40,27 @@ const reviews = [
 
 const ReviewsCarousel = () => {
   return (
-    <Swiper slidesPerView={1} modules={[Navigation, A11y]}>
-      <SwiperSlide>
-        <div className="review">
-          <div className="reviewContent">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime
-            illo excepturi, quod harum quisquam voluptate maiores sint natus quo
-            fugiat.
+    <Swiper slidesPerView={1}>
+      {reviews.map((item) => (
+        <SwiperSlide>
+          <div className="review">
+            <div className="reviewContent">{item.content}</div>
+            <div className="reviewStars">
+              {Array.from({ length: item.review }, (_, index) => index).map(
+                (_) => (
+                  <FaStar />
+                )
+              )}
+              {Array.from({ length: 5 - item.review }, (_, index) => index).map(
+                (_) => (
+                  <FaRegStar />
+                )
+              )}
+            </div>
+            <div className="reviewAuthor">{item.author}</div>
           </div>
-          <div className="reviewStars"></div>
-        </div>
-      </SwiperSlide>
+        </SwiperSlide>
+      ))}
     </Swiper>
   );
 };
