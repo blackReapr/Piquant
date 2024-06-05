@@ -8,4 +8,8 @@
   width: fit-content;
   font-weight: 300;
   font-family: "Oswald", serif;
+  transition: all 0.3s ease;
+  &:hover {
+    background-color: #fff;
+  }
 }
