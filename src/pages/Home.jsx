@@ -6,17 +6,17 @@ import Carousel from "../components/Home/Carousel";
 import ProductsInfo from "../components/Home/ProductsInfo";
 import RecommendedCarousel from "../components/Home/RecommendedCarousel";
 import Awards from "../components/Home/Awards";
+import Reviews from "../components/Home/Reviews";
+import Booking from "../components/Home/Booking";
 
 // Images
 import Welcome from "../assets/images/welcome.jpg";
 import ModificationImageOne from "../assets/images/modification-image-1.jpg";
-
 import NewsImage from "../assets/images/news.jpg";
 import FoodsAndDrink from "../assets/images/home-1-logo-1-300x150.png";
 
+// Icons
 import { FaCalendarAlt } from "react-icons/fa";
-import Reviews from "../components/Home/Reviews";
-import Booking from "../components/Home/Booking";
 
 const Home = () => {
   return (

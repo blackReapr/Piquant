@@ -9,6 +9,7 @@ import { Home } from "./pages";
 import Header from "./components/Header/Header";
 import { Toaster } from "react-hot-toast";
 import { useEffect, useState } from "react";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   const [isActive, setIsActive] = useState(false);
@@ -33,6 +34,7 @@ function App() {
           <Route path="/" element={<Home />} />
         </Routes>
       </main>
+      <Footer />
       <Toaster position="top-center" reverseOrder={false} />
       <a href="#" className={`toTop ${isActive ? "active" : ""}`}>
         TOP
