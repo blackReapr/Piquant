@@ -51,22 +51,50 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .hero {
+    padding: 10px 0;
     .carousel {
-      height: 550px;
+      height: max-content;
       .swiper {
+        padding: 15px;
         .container {
+          width: 100%;
           .row {
             flex-direction: column;
+            gap: 5px;
             .leftSide {
               flex: 0 0 30%;
+              height: 30%;
+              .title {
+                font-size: 31px;
+              }
+              .info {
+                font-size: 12px;
+              }
             }
-            .rightSide {
-              flex: 0 0 70%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding-bottom: 0;
+    .carousel {
+      .swiper {
+        padding-block: 0;
+        .container {
+          .row {
+            gap: 25px;
+            .leftSide {
               img {
-                height: 100%;
-                width: 100%;
+                width: 80px;
+              }
+              a {
+                display: none;
               }
             }
           }
