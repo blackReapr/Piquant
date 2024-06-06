@@ -1,14 +1,15 @@
-import { Link, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
+import { useEffect, useState } from "react";
 
+// SCSS
 import "./assets/scss/index.scss";
 
 // Pages
-import { Home } from "./pages";
+import { Home, Contact } from "./pages";
 
 // Components
 import Header from "./components/Header/Header";
-import { Toaster } from "react-hot-toast";
-import { useEffect, useState } from "react";
 import Footer from "./components/Footer/Footer";
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
       <Footer />

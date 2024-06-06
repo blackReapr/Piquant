@@ -1,0 +1,177 @@
+// START RESERVATION SECTION
+
+.reservationsSection {
+  .container {
+    .row {
+      flex-direction: column;
+      padding: 50px 0;
+      gap: 15px;
+      align-items: center;
+      .title {
+        font-size: 45px;
+        font-weight: 400;
+        text-transform: uppercase;
+        font-family: "Oswald", serif;
+        color: #fff;
+      }
+      .info {
+        color: #fff;
+        font-size: 18px;
+        max-width: 750px;
+        line-height: 1.67em;
+        text-align: center;
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .reservationsSection {
+    .container {
+      .row {
+        .title {
+          font-size: 26px;
+        }
+        .info {
+          width: 350px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .reservationsSection {
+    .container {
+      .row {
+        gap: 10px;
+        .title {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+
+// END RESERVATION SECTION
+
+// START RESERVATION FORM SECTION
+
+.reservationForm {
+  padding: 60px 0;
+  .container {
+    .row {
+      justify-content: space-between;
+      .leftSide {
+        flex: 0 0 55%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        .title {
+          font-size: 30px;
+          font-family: "Oswald", serif;
+          text-transform: uppercase;
+        }
+        .info {
+          font-size: 15px;
+          color: $grayClr;
+          line-height: 27px;
+        }
+        form {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          gap: 15px;
+          .formController {
+            flex: 0 0 47%;
+            input {
+              padding: 12px;
+              width: 100%;
+              color: #131313;
+              font-size: 13px;
+              border: 2px solid rgba(17, 17, 17, 1);
+              &::placeholder {
+                color: #131313;
+              }
+            }
+            .error {
+              margin-top: 5px;
+              color: red;
+              font-size: 12px;
+            }
+          }
+          textarea {
+            flex: 0 0 100%;
+            color: #131313;
+            font-size: 13px;
+            line-height: 17px;
+            border: 2px solid rgba(17, 17, 17, 1);
+            padding: 12px;
+            &::placeholder {
+              color: #131313;
+            }
+          }
+          button {
+            color: $blackClr;
+            background-color: $yellowClr;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            outline: none;
+            color: #111111;
+            font-size: 13px;
+            font-family: "Oswald", serif;
+            font-weight: 700;
+            background-color: rgba(255, 215, 27, 1);
+            border: 2px solid rgba(255, 215, 27, 1);
+            padding: 11px 40px;
+            line-height: 1.7em;
+            transition: all 0.3s ease;
+            width: fit-content;
+            &:hover {
+              background-color: transparent;
+              border-color: $blackClr;
+            }
+          }
+        }
+      }
+      .rightSide {
+        img {
+          margin-top: -50px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .reservationForm {
+    .container {
+      .row {
+        flex-direction: column;
+        gap: 40px;
+        .rightSide {
+          display: flex;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .reservationForm {
+    padding-bottom: 0;
+    .container {
+      .row {
+        gap: 120px;
+        .leftSide {
+          form {
+            flex-direction: column;
+          }
+        }
+      }
+    }
+  }
+}
+
+// END RESERVATION FORM SECTION

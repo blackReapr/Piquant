@@ -849,6 +849,25 @@
 
 // END NEWS SECTION
 
+// START FOODS AND DRINK SECTION
+
+.foodsAndDrink {
+  padding: 130px 0;
+  background-image: url(../images/parallax-3.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  min-height: 400px;
+  .container {
+    .row {
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+// END FOODS AND DRINK SECTION
+
 // START AWARDS SECTION
 
 .awards {

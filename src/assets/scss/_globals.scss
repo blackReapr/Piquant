@@ -10,7 +10,6 @@
 }
 
 body {
-  height: 400vh;
   overflow-x: hidden;
   transition: all 0.3s ease;
   position: relative;
@@ -32,6 +31,16 @@ main {
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center center;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  main {
+    section {
+      &:first-of-type {
+        padding-top: 200px;
+      }
     }
   }
 }
