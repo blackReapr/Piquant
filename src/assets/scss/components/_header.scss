@@ -1,9 +1,10 @@
 .header {
-  background-image: url(../images/home-1-opening-hours-background.jpg);
-  background-position: center center;
-  background-size: contain;
-  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
   display: flex;
+  background-color: transparent;
   flex-direction: column;
   padding: 20px 0;
   gap: 25px;

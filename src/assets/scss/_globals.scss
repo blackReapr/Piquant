@@ -24,6 +24,18 @@ html {
   scroll-behavior: smooth;
 }
 
+main {
+  section {
+    &:first-of-type {
+      padding-top: 160px;
+      background-image: url(../images/title-img-1.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+  }
+}
+
 .toTop {
   position: fixed;
   bottom: 10px;
