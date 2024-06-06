@@ -15,8 +15,30 @@ import ModificationImageOne from "../assets/images/modification-image-1.jpg";
 import NewsImage from "../assets/images/news.jpg";
 import FoodsAndDrink from "../assets/images/home-1-logo-1-300x150.png";
 
+import DeliciousFood from "../assets/images/home-1-image-1.jpg";
+import EveryTaste from "../assets/images/home-1-image-2.jpg";
+import Burger from "../assets/images/home-1-image-3.jpg";
+
 // Icons
 import { FaCalendarAlt } from "react-icons/fa";
+
+const productsInfo = [
+  {
+    image: DeliciousFood,
+    title: "Delicious Food",
+    info: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.",
+  },
+  {
+    image: EveryTaste,
+    title: "For every taste",
+    info: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.",
+  },
+  {
+    image: Burger,
+    title: "The real burgers",
+    info: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.",
+  },
+];
 
 const Home = () => {
   return (
@@ -26,7 +48,7 @@ const Home = () => {
           <Carousel />
         </div>
       </section>
-      <ProductsInfo />
+      <ProductsInfo productsInfo={productsInfo} />
       <ArtGallery />
       <section className="welcome">
         <div className="container">

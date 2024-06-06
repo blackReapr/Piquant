@@ -729,7 +729,7 @@
           border-bottom: 1px dashed #a4a4a4;
           height: 1px;
           top: 50%;
-          left: -150%;
+          right: -150%;
           width: 148px;
         }
         &::before {
@@ -738,7 +738,7 @@
           border-bottom: 1px dashed #a4a4a4;
           height: 1px;
           top: 50%;
-          right: -150%;
+          left: -150%;
           width: 148px;
         }
       }

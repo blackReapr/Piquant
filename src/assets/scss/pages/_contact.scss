@@ -175,3 +175,28 @@
 }
 
 // END RESERVATION FORM SECTION
+
+// START REVIEWS SECTION
+
+.reviews {
+  background-image: url(../images/parallax-4.jpg);
+  padding: 80px 0;
+}
+
+// END REVIEWS SECTION
+
+// START PRODUCTS INFO SECTION
+
+.productsInfo {
+  background-color: transparent;
+  background-image: none;
+  .container {
+    .row {
+      .cardBox {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+// END PRODUCTS INFO SECTION
