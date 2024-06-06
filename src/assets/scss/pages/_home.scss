@@ -484,6 +484,22 @@
   }
 }
 
+@media (max-width: 480px) {
+  .recommended {
+    .container {
+      .row {
+        a {
+          .card {
+            .price {
+              top: 50%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 // END RECOMMENDED SECTION
 
 // START MODIFICATION SECTION
@@ -636,7 +652,7 @@
           flex-direction: column;
           .reviewContent {
             font-size: 15px;
-            padding: 10px 30px 22px 30px;
+            padding: 10px 50px 22px 50px;
           }
           .reviewStars {
             svg {
@@ -647,6 +663,22 @@
           .reviewAuthor {
             font-weight: 700;
             margin-top: 10px;
+          }
+        }
+        .swiper-button-prev {
+          color: #fff;
+          &::after {
+            margin-right: 20px;
+            font-size: 32px;
+            transform: translateY(-50%);
+          }
+        }
+        .swiper-button-next {
+          color: #fff;
+          &::after {
+            margin-left: 20px;
+            font-size: 32px;
+            transform: translateY(-50%);
           }
         }
       }
@@ -788,3 +820,339 @@
 }
 
 // END NEWS SECTION
+
+// START AWARDS SECTION
+
+.awards {
+  padding: 60px 0;
+  .container {
+    .row {
+      justify-content: space-between;
+      .leftSide {
+        flex: 0 0 55%;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        .title {
+          color: $blackClr;
+          font-family: "Oswald", serif;
+          font-size: 30px;
+          text-transform: uppercase;
+        }
+        .info {
+          color: $grayClr;
+          font-size: 15px;
+          line-height: 27px;
+        }
+        .imgContainer {
+          width: 100%;
+          img {
+            width: 100%;
+          }
+        }
+        .contactInfo {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          .title {
+            font-size: 18px;
+          }
+          .contactList {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            row-gap: 25px;
+            .contactItem {
+              flex: 0 0 40%;
+              font-size: 13px;
+              display: flex;
+              gap: 10px;
+              align-items: center;
+            }
+          }
+        }
+      }
+      .rightSide {
+        flex: 0 0 40%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: url(../images/home-1-opening-hours-background.jpg);
+        padding: 28px;
+        .scheduleContainer {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          padding: 18px 26px;
+          border: 1px solid #515151;
+          color: #fff;
+          .schedule {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            .title {
+              text-align: center;
+              font-size: 30px;
+              font-family: "Oswald", serif;
+              span {
+                color: $yellowClr;
+                font-family: "Oswald", serif;
+              }
+            }
+            .weekdays {
+              display: flex;
+              flex-direction: column;
+              width: 100%;
+              height: 100%;
+              gap: 15px;
+              .day {
+                display: flex;
+                width: 100%;
+                .dayName {
+                  display: flex;
+                  align-items: center;
+                  gap: 5px;
+                }
+                .time {
+                  margin-left: 5px;
+                  p {
+                    width: max-content;
+                  }
+                }
+                .whiteDots {
+                  background-image: radial-gradient(
+                    circle closest-side,
+                    #b3b3b3 99%,
+                    rgba(0, 0, 0, 0) 100%
+                  );
+                  background-size: 6px 2px;
+                  background-repeat: repeat-x;
+                  width: 100%;
+                  background-position-y: 15px;
+                  height: 100%;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .awards {
+    .container {
+      .row {
+        gap: 20px;
+        .leftSide {
+          flex: 0 0 50%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .awards {
+    .container {
+      .row {
+        flex-direction: column;
+        gap: 50px;
+        .leftSide {
+          .imgContainer {
+            width: min-content;
+            img {
+              width: min-content;
+            }
+          }
+          .contactInfo {
+            .contactList {
+              flex-direction: column;
+              align-items: flex-start;
+            }
+          }
+        }
+        .rightSide {
+          .scheduleContainer {
+            .schedule {
+              .weekdays {
+                .day {
+                  .whiteDots {
+                    height: 20px;
+                    background-position-y: 18px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .awards {
+    .container {
+      .row {
+        flex-direction: column;
+        gap: 50px;
+        .leftSide {
+          .imgContainer {
+            width: 100%;
+            img {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// END AWARDS SECTION
+
+// START BOOKING SECTION
+
+.booking {
+  background-color: #f5f5f5;
+  padding: 40px 0;
+  .container {
+    .row {
+      justify-content: space-between;
+      color: $blackClr;
+      font-size: 18px;
+      flex-wrap: wrap;
+      .selectWrapper {
+        display: flex;
+        align-items: center;
+        border: 2px solid $blackClr;
+      }
+      select {
+        outline: none;
+        border: none;
+        font-size: 13px;
+        padding: 10px 45px 10px 15px;
+        appearance: none;
+        width: 100%;
+        background-color: transparent;
+      }
+      span {
+        align-self: center;
+      }
+      input {
+        outline: none;
+        border: none;
+        padding: 0 15px;
+        background-color: transparent;
+      }
+      .icon {
+        height: 100%;
+        padding: 0 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-left: 2px solid $blackClr;
+        svg {
+          font-size: 17px;
+        }
+      }
+      .datePicker {
+        position: relative;
+        min-height: 40px;
+        &::after {
+          content: "";
+          position: absolute;
+          width: 2px;
+          height: 100%;
+          background-color: $blackClr;
+          top: 0;
+          right: 42px;
+        }
+        svg {
+          position: absolute;
+          right: 13px;
+          top: 8px;
+          background-color: #fff;
+          cursor: pointer;
+        }
+      }
+      .bookSubmitBtn {
+        display: flex;
+        align-items: center;
+        color: $blackClr;
+        background-color: $yellowClr;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        font-family: "Oswald", serif;
+        padding: 8px 40px 8px 20px;
+        text-transform: uppercase;
+        font-size: 15px;
+        font-weight: 700;
+        transition: all 0.3s ease;
+        svg {
+          margin-top: 2px;
+          margin-right: 20px;
+        }
+        &:hover {
+          background-color: $blackClr;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 850px) {
+  .booking {
+    .container {
+      .row {
+        gap: 20px;
+        justify-content: center;
+        span {
+          display: none;
+        }
+        .bookSubmitBtn {
+          padding-right: 20px;
+          svg {
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .booking {
+    .container {
+      .row {
+        flex-direction: column;
+        .selectWrapper {
+          position: relative;
+          .icon {
+            border: none;
+            &::after {
+              content: "";
+              position: absolute;
+              background-color: $blackClr;
+              width: 2px;
+              top: 0;
+              height: 100%;
+              right: 41px;
+            }
+          }
+        }
+        .bookSubmitBtn {
+          justify-content: center;
+        }
+      }
+    }
+  }
+}
+
+// END BOOKING SECTION

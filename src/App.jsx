@@ -7,6 +7,7 @@ import { Home } from "./pages";
 
 // Components
 import Header from "./components/Header/Header";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/" element={<Home />} />
         </Routes>
       </main>
+      <Toaster position="top-center" reverseOrder={false} />
     </>
   );
 }

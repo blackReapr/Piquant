@@ -136,7 +136,7 @@ const ArtGallery = () => {
   }, [category]);
 
   return (
-    <>
+    <section className="artGallery">
       <div className="container">
         <div className="row">
           <div className="leftSide">
@@ -175,7 +175,7 @@ const ArtGallery = () => {
         </div>
       </div>
       <ArtGalleryImages images={categoryImages} />
-    </>
+    </section>
   );
 };
 

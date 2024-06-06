@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const ArtGalleryImages = ({ images }) => {
   const [itemCount, setItemCount] = useState(4);
@@ -33,10 +34,10 @@ const ArtGalleryImages = ({ images }) => {
           : ""
       }`}>
       {images.slice(0, itemCount).map((item, index) => (
-        <div className="galleryImage" key={index}>
+        <Link to="/" className="galleryImage" key={index}>
           <img src={item.image} alt="" />
           <h3 className="title">{item.title}</h3>
-        </div>
+        </Link>
       ))}
     </div>
   );

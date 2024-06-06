@@ -5,15 +5,18 @@ import ArtGallery from "../components/Home/ArtGallery";
 import Carousel from "../components/Home/Carousel";
 import ProductsInfo from "../components/Home/ProductsInfo";
 import RecommendedCarousel from "../components/Home/RecommendedCarousel";
+import Awards from "../components/Home/Awards";
 
 // Images
 import Welcome from "../assets/images/welcome.jpg";
 import ModificationImageOne from "../assets/images/modification-image-1.jpg";
-import CommaIcon from "../assets/images/testimonials-icon.png";
-import ReviewsCarousel from "../components/Home/ReviewsCarousel";
+
 import NewsImage from "../assets/images/news.jpg";
+import FoodsAndDrink from "../assets/images/home-1-logo-1-300x150.png";
 
 import { FaCalendarAlt } from "react-icons/fa";
+import Reviews from "../components/Home/Reviews";
+import Booking from "../components/Home/Booking";
 
 const Home = () => {
   return (
@@ -23,16 +26,8 @@ const Home = () => {
           <Carousel />
         </div>
       </section>
-      <section className="productsInfo">
-        <div className="container">
-          <div className="row">
-            <ProductsInfo />
-          </div>
-        </div>
-      </section>
-      <section className="artGallery">
-        <ArtGallery />
-      </section>
+      <ProductsInfo />
+      <ArtGallery />
       <section className="welcome">
         <div className="container">
           <div className="row">
@@ -130,16 +125,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section className="reviews">
-        <div className="container">
-          <div className="row">
-            <img src={CommaIcon} alt="comma icon" />
-            <h4 className="title">Happy Customers</h4>
-            <h6 className="subTitle">Delicious Food</h6>
-            <ReviewsCarousel />
-          </div>
-        </div>
-      </section>
+      <Reviews />
       <section className="news">
         <div className="container">
           <div className="row">
@@ -202,6 +188,15 @@ const Home = () => {
           </div>
         </div>
       </section>
+      <section className="foodsAndDrink">
+        <div className="container">
+          <div className="row">
+            <img src={FoodsAndDrink} alt="Foods And Drink" />
+          </div>
+        </div>
+      </section>
+      <Awards />
+      <Booking />
     </>
   );
 };
