@@ -1,0 +1,167 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "price": 29.00,
+            "title": "GRILLED CHORIZO",
+            "image": "https://piquant.qodeinteractive.com/wp-content/uploads/2015/11//s-grilled-chorizo.jpg",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        },
+        {
+            "id": 2,
+            "price": 39.00,
+            "title": "BURGER DELIGHT",
+            "image": "https://piquant.qodeinteractive.com/wp-content/uploads/2015/11//s-burger-delight.jpg",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        },
+        {
+            "id": 3,
+            "price": 25.00,
+            "title": "CARNE ASADA TACOS",
+            "image": "https://piquant.qodeinteractive.com/wp-content/uploads/2015/11//s-carne-asada-tacos.jpg",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        },
+        {
+            "id": 4,
+            "price": 16.00,
+            "title": "STRAWBERRY MESS",
+            "image": "https://piquant.qodeinteractive.com/wp-content/uploads/2015/11//s-strawberry-mess.jpg",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        },
+        {
+            "id": 5,
+            "price": 49.00,
+            "title": "GRILLED PORK",
+            "image": "https://piquant.qodeinteractive.com/wp-content/uploads/2015/11//s-grilled-pork.jpg",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        },
+        {
+            "id": 6,
+            "price": 30.00,
+            "title": "ROASTED POTATOES",
+            "image": "https://piquant.qodeinteractive.com/wp-content/uploads/2015/11//s-roasted-potatoes.jpg",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        },
+        {
+            "id": 7,
+            "price": 39.00,
+            "sale": 26.00,
+            "title": "HIBACHI STEAK",
+            "image": "https://piquant.qodeinteractive.com/wp-content/uploads/2015/11//s-hibachi-steak.jpg",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        }
+    ],
+    "reviews": [
+        {
+            "id": 1,
+            "raiting": 4,
+            "productId": 1,
+            "email": "mehemmed05.aliyev@gmail.com",
+            "content": "best"
+        }
+    ],
+    "categories": [
+        {
+            "id": 1,
+            "name": "Appetizers"
+        },
+        {
+            "id": 2,
+            "name": "Beer Menu"
+        },
+        {
+            "id": 3,
+            "name": "Healthy Food"
+        },
+        {
+            "id": 4,
+            "name": "Homemade Sauces"
+        },
+        {
+            "id": 5,
+            "name": "Secret Spices"
+        }
+    ],
+    "tags": [
+        {
+            "id":1,
+            "name": "beef"
+        },
+        {
+            "id":2,
+            "name": "Breakfast"
+        },
+        {
+            "id":3,
+            "name": "Chicken"
+        },
+        {
+            "id":4,
+            "name": "Classics"
+        },
+        {
+            "id":5,
+            "name": "Dessert"
+        },
+        {
+            "id":6,
+            "name": "Dinner"
+        },
+        {
+            "id":7,
+            "name": "Grill"
+        },
+        {
+            "id":8,
+            "name": "Healthy"
+        },
+        {
+            "id":9,
+            "name": "Italian"
+        },
+        {
+            "id":10,
+            "name": "Main Course"
+        },
+        {
+            "id":11,
+            "name": "New"
+        },
+        {
+            "id":12,
+            "name": "Pasta"
+        },
+        {
+            "id":13,
+            "name": "Pork"
+        },
+        {
+            "id":14,
+            "name": "Roasted"
+        },
+        {
+            "id":15,
+            "name": "Salad"
+        },
+        {
+            "id":16,
+            "name": "Seafood"
+        },
+        {
+            "id":17,
+            "name": "Snacks"
+        },
+        {
+            "id":18,
+            "name": "Soups"
+        },
+        {
+            "id":19,
+            "name": "Spicy"
+        },
+        {
+            "id":20,
+            "name": "Steak"
+        }
+    ]
+}

@@ -1,4 +1,4 @@
-const ProductInfoCard = ({ image, title, info }) => {
+const ArticleInfoCard = ({ image, title, info }) => {
   return (
     <div className="card">
       <div className="imageContainer">
@@ -10,4 +10,4 @@ const ProductInfoCard = ({ image, title, info }) => {
   );
 };
 
-export default ProductInfoCard;
+export default ArticleInfoCard;

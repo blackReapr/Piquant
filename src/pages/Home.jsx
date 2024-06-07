@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 // Components
 import ArtGallery from "../components/Home/ArtGallery";
 import Carousel from "../components/Home/Carousel";
-import ProductsInfo from "../components/Home/ProductsInfo";
+import ArticleInfo from "../components/Home/ArticleInfo";
 import RecommendedCarousel from "../components/Home/RecommendedCarousel";
 import Awards from "../components/Home/Awards";
 import Reviews from "../components/Home/Reviews";
@@ -48,7 +48,7 @@ const Home = () => {
           <Carousel />
         </div>
       </section>
-      <ProductsInfo productsInfo={productsInfo} />
+      <ArticleInfo productsInfo={productsInfo} />
       <ArtGallery />
       <section className="welcome">
         <div className="container">

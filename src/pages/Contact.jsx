@@ -1,7 +1,8 @@
 // Components
 import ContactForm from "../components/Contact/ContactForm";
-import ProductsInfo from "../components/Home/ProductsInfo";
+import ArticleInfo from "../components/Home/ArticleInfo";
 import Reviews from "../components/Home/Reviews";
+import FirstTopSection from "../components/Helper/FirstTopSection";
 
 // Images
 import ProductInfoFirst from "../assets/images/contact-product-1.jpg";
@@ -29,20 +30,10 @@ const productsInfo = [
 const Contact = () => {
   return (
     <>
-      <section className="reservationsSection">
-        <div className="container">
-          <div className="row">
-            <h2 className="title">RESERVATIONS – CONTACT FORM</h2>
-            <p className="info">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore
-            </p>
-          </div>
-        </div>
-      </section>
+      <FirstTopSection title={"RESERVATIONS – CONTACT FORM"} />
       <ContactForm />
       <Reviews />
-      <ProductsInfo productsInfo={productsInfo} />
+      <ArticleInfo productsInfo={productsInfo} />
     </>
   );
 };

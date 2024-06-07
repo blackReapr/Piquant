@@ -1,0 +1,56 @@
+// START FIRST TOP SECTION
+
+.firstTopSection {
+  .container {
+    .row {
+      flex-direction: column;
+      padding: 80px 0;
+      padding-bottom: 100px;
+      gap: 15px;
+      align-items: center;
+      .title {
+        font-size: 45px;
+        font-weight: 400;
+        text-transform: uppercase;
+        font-family: "Oswald", serif;
+        color: #fff;
+      }
+      .info {
+        color: #fff;
+        font-size: 18px;
+        max-width: 750px;
+        line-height: 1.67em;
+        text-align: center;
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .firstTopSection {
+    .container {
+      .row {
+        .title {
+          font-size: 26px;
+        }
+        .info {
+          width: 350px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .firstTopSection {
+    .container {
+      .row {
+        gap: 10px;
+        .title {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+
+// END FIRST TOP SECTION

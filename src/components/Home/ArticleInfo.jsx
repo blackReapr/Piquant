@@ -1,13 +1,13 @@
-import ProductInfoCard from "./ProductInfoCard";
+import ArticleInfoCard from "./ArticleInfoCard";
 
-const ProductsInfo = ({ productsInfo }) => {
+const ArticleInfo = ({ productsInfo }) => {
   return (
     <section className="productsInfo">
       <div className="container">
         <div className="row">
           <div className="cardBox">
             {productsInfo.map((item, index) => (
-              <ProductInfoCard key={index} {...item} />
+              <ArticleInfoCard key={index} {...item} />
             ))}
           </div>
         </div>
@@ -16,4 +16,4 @@ const ProductsInfo = ({ productsInfo }) => {
   );
 };
 
-export default ProductsInfo;
+export default ArticleInfo;

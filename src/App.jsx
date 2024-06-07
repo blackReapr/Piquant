@@ -1,12 +1,12 @@
+import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
-import { useEffect, useState } from "react";
 
 // SCSS
 import "./assets/scss/index.scss";
 
 // Pages
-import { Home, Contact } from "./pages";
+import { Home, Contact, Products } from "./pages";
 
 // Components
 import Header from "./components/Header/Header";
@@ -34,6 +34,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/products" element={<Products />} />
         </Routes>
       </main>
       <Footer />
