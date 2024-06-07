@@ -24,7 +24,7 @@ html {
 }
 
 main {
-  section {
+  section:not(.navigationSection) {
     &:first-of-type {
       padding-top: 160px;
       background-image: url(../images/title-img-1.jpg);

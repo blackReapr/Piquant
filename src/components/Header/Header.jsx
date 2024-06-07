@@ -12,7 +12,7 @@ import Sidebar from "./Sidebar";
 import { useEffect, useState } from "react";
 import MobileNavbar from "./MobileNavbar";
 
-const Header = () => {
+const Header = ({ isBgOver }) => {
   const [screenHeight, setScreenHeight] = useState(0);
   const [isStickyNavActive, setIsStickyNavActive] = useState(false);
   const [isSidebarActive, setIsSidebarActive] = useState(false);
@@ -45,7 +45,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="header">
+      <header className={`header ${isBgOver ? "overBg" : "default"}`}>
         <div className="upperSection">
           <div className="container">
             <div className="row">
@@ -69,7 +69,7 @@ const Header = () => {
           </div>
         </div>
         <MobileNavbar />
-        <LowerSectionCore>
+        <LowerSectionCore isBgOver={isBgOver}>
           <div className="rightSection">
             <form>
               <input type="text" placeholder="Search..." />
@@ -91,7 +91,7 @@ const Header = () => {
             screenHeight < 350 || !isStickyNavActive ? "" : "active"
           } ${isSidebarActive ? "activeSidebar" : ""}`}
         >
-          <LowerSectionCore>
+          <LowerSectionCore isBgOver={isBgOver}>
             <CiMenuBurger
               onClick={() => setIsSidebarActive(!isSidebarActive)}
             />

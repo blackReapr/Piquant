@@ -1,14 +1,19 @@
 import Logo from "../../assets/images/logo.png";
+import DarkLogo from "../../assets/images/logo-dark.png";
 import { FaStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const LowerSectionCore = ({ children }) => {
+const LowerSectionCore = ({ isBgOver, children }) => {
   return (
     <div className="lowerSection">
       <div className="container">
         <div className="row">
           <Link to="/" className="logo">
-            <img src={Logo} alt="logo" />
+            {isBgOver ? (
+              <img src={Logo} alt="logo" />
+            ) : (
+              <img src={DarkLogo} alt="dark logo" />
+            )}
           </Link>
           <nav className="navbar">
             <ul className="navList">
@@ -33,7 +38,7 @@ const LowerSectionCore = ({ children }) => {
               </li>
               <FaStar />
               <li className="navItem">
-                <Link to="/">Shop</Link>
+                <Link to="/products">Shop</Link>
               </li>
               <FaStar />
               <li className="navItem">

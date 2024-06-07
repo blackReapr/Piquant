@@ -94,6 +94,38 @@
   }
 }
 
+.default {
+  .lowerSection {
+    .container {
+      .row {
+        .navbar {
+          .navList {
+            .navItem {
+              a {
+                color: $blackClr;
+                &:hover {
+                  color: $grayClr;
+                }
+              }
+            }
+          }
+        }
+        .rightSection {
+          form {
+            input {
+              border: 1px solid #efefef;
+            }
+          }
+          .cart {
+            color: $grayClr;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+
 @media (max-width: 1024px) {
   .lowerSection {
     display: none;

@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 // Icons
 import { FiShoppingCart } from "react-icons/fi";
 
-const ProductCard = ({ image, title, price }) => {
+const ProductCard = ({ id, image, title, price }) => {
   return (
-    <Link to="#" className="productCard">
+    <Link to={`/products/${id}`} className="productCard">
       <div className="productImage">
         <img src={image} alt="food" />
         <p className="addToCart">
