@@ -8,7 +8,7 @@ const TopRatedProductCard = ({ image, title, price }) => {
       </div>
       <div className="topRatedProductContent">
         <h5 className="title">{title}</h5>
-        <p className="price">${price}.00</p>
+        <p className="price">£{price}.00</p>
       </div>
     </Link>
   );
