@@ -1,3 +1,5 @@
+// START NAVIGATION SECTION
+
 .navigationSection {
   padding: 20px 0;
   background-color: #f9f9f8;
@@ -25,3 +27,314 @@
     }
   }
 }
+
+// END NAVIGATION SECTION
+
+// START PRODUCT DETAILS SECTION
+
+.productsDetailsSection {
+  padding: 60px 0;
+  .container {
+    .row {
+      justify-content: space-between;
+      .leftSide {
+        flex: 0 0 40%;
+        img {
+          width: 100%;
+        }
+      }
+      .rightSide {
+        flex: 0 0 55%;
+        display: flex;
+        flex-direction: column;
+        gap: 23px;
+        .productHeader {
+          color: $blackClr;
+          font-weight: 700;
+          padding-bottom: 23px;
+          width: 100%;
+          border-bottom: 1px dotted #dedede;
+          .title {
+            font-family: "Oswald", serif;
+            font-size: 30px;
+            margin-bottom: 15px;
+          }
+          .productPrice {
+            font-family: "Oswald", serif;
+            font-size: 18px;
+          }
+        }
+        .productDescription {
+          color: $grayClr;
+          font-size: 15px;
+          line-height: 27px;
+        }
+        .addToCart {
+          display: flex;
+          gap: 25px;
+          .productCountContainer {
+            width: fit-content;
+            display: flex;
+            align-items: center;
+            color: #252525;
+            border: 2px solid $blackClr;
+            font-size: 18px;
+            .productCount {
+              width: 55px;
+              padding: 4px 18px;
+              text-align: center;
+            }
+            .controlProductCount {
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              height: 100%;
+              .incrementBtn,
+              .decrementBtn {
+                border: none;
+                outline: none;
+                background-color: transparent;
+                border-left: 2px solid $blackClr;
+                padding: 5px 8px;
+                cursor: pointer;
+                font-size: 8px;
+                transition: all 0.3s ease;
+                &:hover {
+                  background-color: #f5f5f5;
+                }
+              }
+              .incrementBtn {
+                border-bottom: 2px solid $blackClr;
+              }
+            }
+          }
+          .addToCartBtn {
+            padding: 10px 23px;
+            text-transform: uppercase;
+            color: #fff;
+            background-color: $blackClr;
+            font-weight: 700;
+            font-family: Oswald, serif;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            &:hover {
+              background-color: $yellowClr;
+              color: $blackClr;
+            }
+          }
+        }
+        .descriptionAndReviews {
+          .headers {
+            display: flex;
+
+            .descriptionHeader,
+            .reviewsHeader {
+              padding: 8px 21px;
+              text-transform: capitalize;
+              font-size: 13px;
+              color: #252525;
+              border: 2px solid black;
+              position: relative;
+              border-bottom: none;
+              cursor: pointer;
+              transition: all 0.3s ease;
+              &:hover {
+                color: $grayClr;
+              }
+              &.active {
+                &::after {
+                  content: "";
+                  position: absolute;
+                  bottom: -3px;
+                  z-index: 2;
+                  left: 0;
+                  width: 100%;
+                  height: 3px;
+                  background-color: #fff;
+                }
+              }
+            }
+            .descriptionHeader {
+              border-right: none;
+            }
+          }
+          .content {
+            padding: 27px 27px 34px 30px;
+            border: 2px solid black;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            .descriptionContent,
+            .reviewContent {
+              line-height: 27px;
+              color: $grayClr;
+              font-size: 15px;
+            }
+            img {
+              border-radius: 50%;
+              float: left;
+              width: 75px;
+              margin-right: 15px;
+            }
+            .reviewStars {
+              svg {
+                color: $yellowClr;
+                margin-right: 5px;
+              }
+            }
+            .addReview {
+              display: flex;
+              flex-direction: column;
+              gap: 15px;
+              color: $grayClr;
+              .title {
+                font-size: 20px;
+                font-family: "Oswald", serif;
+                text-transform: uppercase;
+                color: $blackClr;
+              }
+              .info {
+                font-size: 15px;
+              }
+              .raiting {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                p {
+                  font-size: 15px;
+                }
+              }
+              form {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                gap: 20px;
+                .reviewController {
+                  width: 100%;
+                  label {
+                    font-size: 15px;
+                  }
+                  textarea {
+                    outline: none;
+                    border: 2px solid $blackClr;
+                    resize: none;
+                    padding: 12px;
+                    font-size: 12px;
+                    color: #131313;
+                    width: 100%;
+                    margin-top: 10px;
+                  }
+                }
+                input {
+                  flex: 0 0 45%;
+                  padding: 12px;
+                  outline: none;
+                  font-size: 12px;
+                  color: #131313;
+                  border: 2px solid $blackClr;
+                  &::placeholder {
+                    color: #131313;
+                  }
+                }
+                .saveInfo {
+                  font-size: 15px;
+                  line-height: 27px;
+                  width: 100%;
+                  input {
+                    margin-right: 10px;
+                  }
+                }
+                button {
+                  text-transform: uppercase;
+                  border: none;
+                  outline: none;
+                  background-color: $blackClr;
+                  color: #fff;
+                  transition: all 0.3s ease;
+                  cursor: pointer;
+                  font-family: "Oswald", serif;
+                  padding: 11px 40px;
+                  &:hover {
+                    color: $blackClr;
+                    background-color: $yellowClr;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .productsDetailsSection {
+    .container {
+      .row {
+        .rightSide {
+          .descriptionAndReviews {
+            .headers {
+              flex-direction: column;
+              .descriptionHeader {
+                border-bottom: 2px solid $blackClr;
+                border-right: 2px solid $blackClr;
+                padding: 12px 0;
+                text-align: center;
+                &::after {
+                  display: none;
+                }
+              }
+              .reviewsHeader {
+                padding: 12px 0;
+                text-align: center;
+                border-top: none;
+                &::after {
+                  display: none;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .productsDetailsSection {
+    .container {
+      .row {
+        flex-direction: column;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .productsDetailsSection {
+    .container {
+      .row {
+        .rightSide {
+          .descriptionAndReviews {
+            .content {
+              .addReview {
+                form {
+                  input {
+                    flex: 0 0 100%;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// END PRODUCT DETAILS SECTION

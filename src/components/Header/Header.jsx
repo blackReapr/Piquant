@@ -91,7 +91,7 @@ const Header = ({ isBgOver }) => {
             screenHeight < 350 || !isStickyNavActive ? "" : "active"
           } ${isSidebarActive ? "activeSidebar" : ""}`}
         >
-          <LowerSectionCore isBgOver={isBgOver}>
+          <LowerSectionCore isBgOver={true}>
             <CiMenuBurger
               onClick={() => setIsSidebarActive(!isSidebarActive)}
             />

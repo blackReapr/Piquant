@@ -1,10 +1,9 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 
-import { FaStar, FaRegStar } from "react-icons/fa";
-
 import "swiper/css";
 import "swiper/css/navigation";
+import StarReview from "../Helper/StarReview";
 
 const reviews = [
   {
@@ -40,22 +39,11 @@ const reviews = [
 const ReviewsCarousel = () => {
   return (
     <Swiper slidesPerView={1} navigation={true} modules={[Navigation]}>
-      {reviews.map(item => (
+      {reviews.map((item) => (
         <SwiperSlide key={item.id}>
           <div className="review">
             <div className="reviewContent">{item.content}</div>
-            <div className="reviewStars">
-              {Array.from({ length: item.review }, (_, index) => index).map(
-                (_, index) => (
-                  <FaStar key={index} />
-                )
-              )}
-              {Array.from({ length: 5 - item.review }, (_, index) => index).map(
-                (_, index) => (
-                  <FaRegStar key={index + 5} />
-                )
-              )}
-            </div>
+            <StarReview review={item.review} />
             <div className="reviewAuthor">{item.author}</div>
           </div>
         </SwiperSlide>
