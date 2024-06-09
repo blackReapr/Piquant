@@ -3,7 +3,29 @@ import prisma from "../prismaClient/index.js";
 export const getProducts = async (req, res) => {
   try {
     const { minValue, maxValue, categoryId } = req.query;
-    let products = await prisma.product.findMany();
+    let products = await prisma.product.findMany({
+      include: {
+        _count: {
+          select: {
+            reviews: true,
+          },
+        },
+        reviews: {
+          select: {
+            raiting: true,
+          },
+        },
+      },
+    });
+    products.forEach(product => {
+      const total = product.reviews.reduce(
+        (acc, review) => acc + review.raiting,
+        0
+      );
+      product.averageRaiting = product.reviews.length
+        ? total / product.reviews.length
+        : 0;
+    });
     if (minValue || maxValue) {
       products = products.filter(
         product => product.price >= minValue && product.price <= maxValue
@@ -55,6 +77,7 @@ export const getProduct = async (req, res) => {
         id: Number(id),
       },
       select: {
+        id: true,
         title: true,
         description: true,
         image: true,

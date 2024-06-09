@@ -59,6 +59,18 @@ const Products = () => {
       const newProducts = [...products];
       newProducts.sort((x, y) => y.price - x.price);
       setProducts(newProducts);
+    } else if (filterType === filters.popularity) {
+      const newProducts = [...products];
+      newProducts.sort((x, y) => y._count.reviews - x._count.reviews);
+      setProducts(newProducts);
+    } else if (filterType === filters.averageRaiting) {
+      const newProducts = [...products];
+      newProducts.sort((x, y) => y.averageRaiting - x.averageRaiting);
+      setProducts(newProducts);
+    } else if (filterType === filters.latest) {
+      const newProducts = [...products];
+      newProducts.sort((x, y) => y.createdAt - x.createdAt);
+      setProducts(newProducts);
     }
   };
 
@@ -189,6 +201,7 @@ const Products = () => {
                       onClick={() => handleCategoryChange(item.id)}
                     >
                       {item.name}
+                      <span>({item._count.products})</span>
                     </li>
                   ))}
                 </ul>

@@ -28,7 +28,7 @@ const ProductDetail = () => {
   const [reviews, setReviews] = useState([]);
   const [reviewStarCount, setReviewStarCount] = useState(0);
   const [tempStarCount, setTempStarCount] = useState(0);
-  const [review, setReview] = useState("");
+  const [content, setContent] = useState("");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [checkSave, setCheckSave] = useState(false);
@@ -50,24 +50,38 @@ const ProductDetail = () => {
       );
   };
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault();
     if (reviewStarCount === 0) return toast.error("Please select a raiting");
-    if (review.length === 0) return toast.error("Please write your review");
+    if (content.length === 0) return toast.error("Please write your review");
     if (name.length < 4)
       return toast.error("Name must at least contain 4 characters");
     if (!email.match(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/))
       return toast.error("Incorrect Email");
+
+    const data = {
+      content,
+      raiting: reviewStarCount,
+      email,
+    };
+    const { data: review } = await axios.post(
+      `http://localhost:5000/api/reviews/${id}`,
+      data
+    );
+    toast.success("Review added successfully");
+    console.log(review);
+    setReviews([...reviews, review]);
     if (checkSave) {
       const user = {
         name,
         email,
       };
       localStorage.setItem("user", JSON.stringify(user));
+    } else {
+      setName("");
+      setEmail("");
     }
-    setName("");
-    setEmail("");
-    setReview("");
+    setContent("");
     setCheckSave(false);
     setReviewStarCount(0);
   };
@@ -85,8 +99,10 @@ const ProductDetail = () => {
       setProduct(data);
     };
     const getReviews = async () => {
-      const { data } = await axios.get("http://localhost:3000/reviews");
-      setReviews(data);
+      const {
+        data: { reviews },
+      } = await axios.get(`http://localhost:5000/api/reviews/${id}`);
+      setReviews(reviews);
     };
     getProduct();
     getReviews();
@@ -169,11 +185,11 @@ const ProductDetail = () => {
                     <>
                       <div className="reviewsContainer">
                         {reviews.map(item => (
-                          <Fragment key={item.id}>
+                          <div className="reviewWrapper" key={item.id}>
                             <img src={ProfileImage} alt="Profile" />
                             <StarReview review={item.raiting} />
                             <p className="reviewContent">{item.content}</p>
-                          </Fragment>
+                          </div>
                         ))}
                       </div>
                       <div className="addReview">
@@ -203,8 +219,8 @@ const ProductDetail = () => {
                               cols={45}
                               rows={8}
                               id="review"
-                              value={review}
-                              onChange={e => setReview(e.target.value)}
+                              value={content}
+                              onChange={e => setContent(e.target.value)}
                             ></textarea>
                           </div>
                           <input

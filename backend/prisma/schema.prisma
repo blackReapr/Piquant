@@ -17,6 +17,7 @@ model Product {
   category    Category @relation(fields: [categoryId], references: [id])
   reviews     Review[]
   tags        Tag[]
+  createdAt   DateTime @default(now())
 }
 
 model Review {
