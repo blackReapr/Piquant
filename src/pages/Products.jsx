@@ -11,6 +11,9 @@ import Tags from "../components/Products/Tags";
 import RangeSlider from "react-range-slider-input";
 import "react-range-slider-input/dist/style.css";
 
+// Icons
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+
 const filters = {
   latest: 0,
   popularity: 1,
@@ -19,16 +22,34 @@ const filters = {
   highToLow: 4,
 };
 
-// /todos?_sort=createTime&_order=desc
+const PRODUCT_PER_PAGE = 6;
 
 const Products = () => {
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [sliderValues, setSliderValues] = useState([0, 60]);
+  const [page, setPage] = useState(1);
 
-  const [filter, setFilter] = useState(filters.latest);
+  useEffect(() => {
+    if (products.length > PRODUCT_PER_PAGE) {
+      setPage(1);
+    } else {
+      setPage(0);
+    }
+  }, [products]);
 
-  const handleChange = (e) => {
+  const handleCategoryChange = async id => {
+    const {
+      data: { products },
+    } = await axios.get("http://localhost:5000/api/products", {
+      params: {
+        categoryId: id,
+      },
+    });
+    setProducts(products);
+  };
+
+  const handleChange = e => {
     const filterType = Number(e.target.value);
     if (filterType === filters.lowToHigh) {
       const newProducts = [...products];
@@ -43,24 +64,30 @@ const Products = () => {
 
   const handleFilter = async () => {
     const [minValue, maxValue] = sliderValues;
-    const { data } = await axios.get("http://localhost:3000/products", {
+    const {
+      data: { products },
+    } = await axios.get("http://localhost:5000/api/products", {
       params: {
-        price_gte: minValue,
-        price_lte: maxValue,
+        minValue,
+        maxValue,
       },
     });
-    setProducts(data);
+    setProducts(products);
   };
 
   useEffect(() => {
     const getProducts = async () => {
-      const { data } = await axios.get("http://localhost:3000/products");
-      setProducts(data);
+      const {
+        data: { products },
+      } = await axios.get("http://localhost:5000/api/products");
+      setProducts(products);
     };
 
     const getCategories = async () => {
-      const { data } = await axios.get("http://localhost:3000/categories");
-      setCategories(data);
+      const {
+        data: { categories },
+      } = await axios.get("http://localhost:5000/api/categories");
+      setCategories(categories);
     };
 
     getProducts();
@@ -82,9 +109,15 @@ const Products = () => {
                 <>
                   <div className="productsFilter">
                     <p className="resultCount">
-                      Showing {products.length} Results
+                      Showing{" "}
+                      {page === 0
+                        ? "All"
+                        : page === 1
+                        ? "1–6 Of"
+                        : `7-${products.length} Of`}{" "}
+                      {products.length} Results
                     </p>
-                    <select onChange={(e) => handleChange(e)}>
+                    <select onChange={e => handleChange(e)}>
                       <option value={filters.latest}>Sort by latest</option>
                       <option value={filters.popularity}>
                         Sort by popularity
@@ -101,16 +134,47 @@ const Products = () => {
                     </select>
                   </div>
                   <div className="productsBox">
-                    {products.map((item) => (
-                      <ProductCard
-                        key={item.id}
-                        id={item.id}
-                        image={item.image}
-                        title={item.title}
-                        price={item.price}
-                      />
-                    ))}
+                    {products
+                      .slice(
+                        page === 0 || page === 1 ? 0 : 6,
+                        page === 1 ? 6 : products.length
+                      )
+                      .map(item => (
+                        <ProductCard
+                          key={item.id}
+                          id={item.id}
+                          image={item.image}
+                          title={item.title}
+                          price={item.price}
+                        />
+                      ))}
                   </div>
+                  {page !== 0 ? (
+                    <div className="pagination">
+                      <FaArrowLeft
+                        onClick={() => setPage(1)}
+                        className={`${page === 1 ? "" : "active"}`}
+                      />
+                      <span
+                        className={`${page === 1 ? "active" : ""}`}
+                        onClick={() => setPage(1)}
+                      >
+                        1
+                      </span>
+                      <span
+                        className={`${page === 2 ? "active" : ""}`}
+                        onClick={() => setPage(2)}
+                      >
+                        2
+                      </span>
+                      <FaArrowRight
+                        onClick={() => setPage(2)}
+                        className={`${page === 2 ? "" : "active"}`}
+                      />
+                    </div>
+                  ) : (
+                    ""
+                  )}
                 </>
               )}
             </div>
@@ -118,8 +182,12 @@ const Products = () => {
               <div className="categoriesContainer">
                 <h3 className="title">Categories</h3>
                 <ul className="categoryList">
-                  {categories.map((item) => (
-                    <li className="categoryItem" key={item.id}>
+                  {categories.map(item => (
+                    <li
+                      className="categoryItem"
+                      key={item.id}
+                      onClick={() => handleCategoryChange(item.id)}
+                    >
                       {item.name}
                     </li>
                   ))}
@@ -128,9 +196,10 @@ const Products = () => {
               <div className="topRatedProducts">
                 <h3 className="title">top rated products</h3>
                 <div className="topRatedProductsBox">
-                  {products.slice(0, 3).map((item) => (
+                  {products.slice(0, 3).map(item => (
                     <TopRatedProductCard
                       key={item.id}
+                      id={item.id}
                       image={item.image}
                       title={item.title}
                       price={item.price}
@@ -143,7 +212,7 @@ const Products = () => {
                 <h3 className="title">Filter by price</h3>
                 <RangeSlider
                   value={sliderValues}
-                  onInput={(e) => setSliderValues(e)}
+                  onInput={e => setSliderValues(e)}
                   step={10}
                   min={10}
                   max={60}

@@ -43,7 +43,7 @@ const ReviewsCarousel = () => {
         <SwiperSlide key={item.id}>
           <div className="review">
             <div className="reviewContent">{item.content}</div>
-            <StarReview review={item.review} />
+            <StarReview review={item.review} reviewActive={false} />
             <div className="reviewAuthor">{item.author}</div>
           </div>
         </SwiperSlide>

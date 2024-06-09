@@ -28,6 +28,18 @@
   }
 }
 
+@media (max-width: 1024px) {
+  .navigationSection {
+    .container {
+      .row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 7px;
+      }
+    }
+  }
+}
+
 // END NAVIGATION SECTION
 
 // START PRODUCT DETAILS SECTION
@@ -182,7 +194,13 @@
             }
             .reviewStars {
               svg {
-                color: $yellowClr;
+                cursor: pointer;
+                path {
+                  pointer-events: none;
+                }
+                &.active {
+                  color: $yellowClr;
+                }
                 margin-right: 5px;
               }
             }

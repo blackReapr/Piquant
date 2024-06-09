@@ -99,6 +99,29 @@
             }
           }
         }
+        .pagination {
+          width: 100%;
+          font-size: 18px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 10px;
+          span {
+            color: $grayClr;
+            cursor: pointer;
+            &.active {
+              color: $blackClr;
+            }
+          }
+          svg {
+            cursor: pointer;
+            font-size: 13px;
+            display: none;
+            &.active {
+              display: inline-block;
+            }
+          }
+        }
       }
       .rightSide {
         flex: 0 0 22%;

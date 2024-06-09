@@ -684,7 +684,10 @@
           }
           .reviewStars {
             svg {
-              color: $yellowClr;
+              &.active {
+                color: $yellowClr;
+              }
+              color: $grayClr;
               margin-right: 5px;
             }
           }

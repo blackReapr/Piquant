@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 
-const TopRatedProductCard = ({ image, title, price }) => {
+const TopRatedProductCard = ({ id, image, title, price }) => {
   return (
-    <Link to="/" className="topRatedProductCard">
+    <Link to={`/products/${id}`} className="topRatedProductCard">
       <div className="topRatedProductCardImage">
         <img src={image} alt={title} />
       </div>

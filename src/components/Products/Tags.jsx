@@ -6,8 +6,10 @@ const Tags = () => {
 
   useEffect(() => {
     const getTags = async () => {
-      const { data } = await axios.get("http://localhost:3000/tags");
-      setTags(data);
+      const {
+        data: { tags },
+      } = await axios.get("http://localhost:5000/api/tags");
+      setTags(tags);
     };
     getTags();
   }, []);
