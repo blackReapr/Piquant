@@ -1,19 +1,40 @@
-## Getting Started
+### Installation
 
-To get started with the project, follow these steps:
+1. Clone the repository:
 
-1. **Change Directory to Data Folder**: Navigate to the `backend` folder in your terminal or command prompt:
+   ```sh
+   git clone https://github.com/blackReapr/Piquant
+   cd your-repo-name
+   ```
 
-### `cd backend`
+2. Install frontend dependencies:
 
-2. **Start JSON Server**: Run the following command to start the JSON Server with the provided `db.json` file:
+   ```sh
+   npm install
+   ```
 
-### `npx json-server db.json`
+3. Install backend dependencies:
 
-This will simulate a backend server with the data provided in `db.json`. Make sure the server is running before proceeding to the next step.
+   ```sh
+   cd ../backend
+   npm install
+   ```
 
-3. **Start the React App**: Once the JSON Server is running, navigate back to the main directory of the project and start the React app:
+### Running the Application
 
-### `npm start`
+1. Start the backend server:
 
-This command will start the development server and open the app in your default web browser.
+   ```sh
+   cd backend
+   npm start
+   ```
+
+   By default, the backend server runs on `http://localhost:5000`.
+
+2. Start the frontend development server:
+
+   ```sh
+   npm run dev
+   ```
+
+   By default, the frontend development server runs on `http://localhost:5173`.
