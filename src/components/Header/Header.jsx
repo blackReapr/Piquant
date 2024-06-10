@@ -1,15 +1,14 @@
+import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+
 // Icons
 import { FaCalendar, FaSearch, FaShoppingCart } from "react-icons/fa";
-
 import { CiMenuBurger } from "react-icons/ci";
 
-import { Link } from "react-router-dom";
-
+// Components
 import LowerSectionCore from "./LowerSectionCore";
 import SocialMedia from "./SocialMedia";
 import Sidebar from "./Sidebar";
-
-import { useEffect, useState } from "react";
 import MobileNavbar from "./MobileNavbar";
 
 const Header = ({ isBgOver }) => {
@@ -29,7 +28,7 @@ const Header = ({ isBgOver }) => {
 
   useEffect(() => {
     const onScroll = () => {
-      setScreenHeight((prevHeight) => {
+      setScreenHeight(prevHeight => {
         setIsStickyNavActive(prevHeight > window.scrollY ? false : true);
         return window.scrollY;
       });
@@ -77,13 +76,14 @@ const Header = ({ isBgOver }) => {
                 <FaSearch />
               </button>
             </form>
-            <div className="cart">
+            <Link to="/" className="cart">
               <p>
                 Cart
                 <FaShoppingCart />
                 <span className="cartCount">0</span>
               </p>
-            </div>
+              <div className="cartInfoPopUp">No products in the cart</div>
+            </Link>
           </div>
         </LowerSectionCore>
         <div

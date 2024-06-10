@@ -68,6 +68,7 @@
         }
         .cart {
           color: #fff;
+          position: relative;
           p {
             display: flex;
             align-items: center;
@@ -87,6 +88,24 @@
               line-height: 17px;
               text-align: center;
             }
+          }
+          &:hover {
+            .cartInfoPopUp {
+              visibility: visible;
+              opacity: 1;
+            }
+          }
+          .cartInfoPopUp {
+            transition: all 0.3s ease;
+            position: absolute;
+            visibility: hidden;
+            opacity: 0;
+            right: 0;
+            bottom: -70px;
+            width: max-content;
+            background-color: $blackClr;
+            padding: 20px;
+            font-size: 13px;
           }
         }
       }

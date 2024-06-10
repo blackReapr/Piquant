@@ -12,6 +12,43 @@
     .swiper {
       height: 100%;
       width: 100%;
+      .swiper-button-next,
+      .swiper-button-prev {
+        color: #fff;
+        &::after {
+          font-size: 24px;
+        }
+      }
+      .swiper-slide-prev,
+      .swiper-slide-next {
+        visibility: hidden;
+        opacity: 0;
+      }
+      .swiper-slide-active {
+        .leftSide {
+          * {
+            visibility: hidden;
+            opacity: 0;
+          }
+          img {
+            animation: appearFromRight 1.2s ease-out 0.4s forwards;
+          }
+          .title {
+            animation: appearFromRight 1.2s ease-out 0.5s forwards;
+          }
+          .info {
+            animation: appearFromRight 1.2s ease-out 0.6s forwards;
+          }
+          a {
+            animation: appearFromRight 1.2s ease-out 0.7s forwards;
+          }
+        }
+        .rightSide {
+          visibility: hidden;
+          opacity: 0;
+          animation: appearFromBottom 2s ease 1s forwards;
+        }
+      }
       .container {
         .row {
           overflow: hidden;
@@ -22,7 +59,6 @@
             display: flex;
             flex-direction: column;
             gap: 25px;
-
             img {
               width: 160px;
             }
@@ -48,6 +84,32 @@
         }
       }
     }
+  }
+}
+
+@keyframes appearFromBottom {
+  from {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(80px);
+  }
+  to {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes appearFromRight {
+  from {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateX(80px);
+  }
+  to {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 
