@@ -1,3 +1,4 @@
+import { useState } from "react";
 // Icons
 import { SlUserFollow } from "react-icons/sl";
 import { FaRegCalendarAlt, FaRegHandPointRight } from "react-icons/fa";
@@ -5,6 +6,7 @@ import { CiClock2 } from "react-icons/ci";
 import toast from "react-hot-toast";
 
 const Booking = () => {
+  const [date, setDate] = useState("");
   return (
     <section className="booking">
       <div className="container">
@@ -28,7 +30,12 @@ const Booking = () => {
           </div>
           <span>For</span>
           <div className="datePicker selectWrapper">
-            <input type="date" id="date" />
+            <input
+              type="date"
+              id="date"
+              value={date}
+              onChange={e => setDate(e.target.value)}
+            />
             <FaRegCalendarAlt
               onClick={() => document.getElementById("date").showPicker()}
             />
@@ -59,7 +66,12 @@ const Booking = () => {
           </div>
           <button
             className="bookSubmitBtn"
-            onClick={() => toast.success("Successfully Booked!")}>
+            onClick={() =>
+              date
+                ? toast.success("Successfully Booked!")
+                : toast.error("Please choose a date!")
+            }
+          >
             <FaRegHandPointRight /> Book A table
           </button>
         </div>
